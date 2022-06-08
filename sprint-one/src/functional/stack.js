@@ -29,7 +29,6 @@ var Stack = function() {
     //check length
     var arraylength = Object.keys(storage);
     return arraylength.length;
-
   };
 
   return someInstance;
