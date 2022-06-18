@@ -1,27 +1,34 @@
 describe('set', function() {
-  var set;
+  var _set;
 
   beforeEach(function() {
-    set = Set();
+    _set = Set();
   });
 
   it('should have methods named "add", "contains", and "remove"', function() {
-    expect(set.add).to.be.a('function');
-    expect(set.contains).to.be.a('function');
-    expect(set.remove).to.be.a('function');
+    expect(_set.add).to.be.a('function');
+    expect(_set.contains).to.be.a('function');
+    expect(_set.remove).to.be.a('function');
   });
 
-  it('should add values to a set', function() {
-    set.add('Susan Sarandon');
-    set.add('Danny Glover');
-    expect(set.contains('Danny Glover')).to.equal(true);
-    expect(set.contains('Susan Sarandon')).to.equal(true);
+  it('should add values to a _set', function() {
+    _set.add('Susan Sarandon');
+    _set.add('Danny Glover');
+    expect(_set.contains('Danny Glover')).to.equal(true);
+    expect(_set.contains('Susan Sarandon')).to.equal(true);
   });
 
-  it('should remove values from a set', function() {
-    set.add('Mel Gibson');
-    set.remove('Mel Gibson');
-    expect(set.contains('Mel Gibson')).to.equal(false);
+  it('should return false if the item is not contained in the _set', function() {
+    _set.add('Susan Sarandon');
+    _set.add('Danny Glover');
+    expect(_set.contains('John Glover')).to.equal(false);
+    expect(_set.contains('Susan Sarandon')).to.equal(true);
+  });
+
+  it('should remove values from a _set', function() {
+    _set.add('Mel Gibson');
+    _set.remove('Mel Gibson');
+    expect(_set.contains('Mel Gibson')).to.equal(false);
   });
 
 });

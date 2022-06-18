@@ -35,6 +35,12 @@ describe('hashTable', function() {
     expect(hashTable.retrieve('Steven')).to.equal(undefined);
   });
 
+  it('should return undefined if k is undefined', function() {
+    hashTable.insert('Steven', 'Tyler');
+    hashTable.remove('Angela');
+    expect(hashTable.retrieve('Angela')).to.equal(undefined);
+  });
+
   it('should handle hash function collisions', function() {
     var v1 = 'val1';
     var v2 = 'val2';
